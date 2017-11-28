@@ -1,0 +1,41 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.1.61'
+    id 'org.jetbrains.kotlin.plugin.spring' version '1.1.61'
+    id 'org.mikeneck.junit.starter.normal' version '5.0.2'
+    id 'org.springframework.boot' version '1.5.9.RELEASE'
+}
+
+group 'com.mark.study.eventsourcing-sample'
+version '0.1-SNAPSHOT'
+
+ext {
+    axonVersion = '3.0.7'
+    kotlinVersion = '1.1.61'
+    springBootVersion = '1.5.9.RELEASE'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib', version: kotlinVersion
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jre8', version: kotlinVersion
+    compile group: 'org.axonframework', name: 'axon-spring-boot-starter', version: axonVersion
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: springBootVersion
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootVersion
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-freemarker', version: springBootVersion
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb', version: springBootVersion
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = '1.8'
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = '1.8'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.3.1'
+}

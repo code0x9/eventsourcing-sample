@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    # url: jdbc:h2:tcp://localhost:9092/~/test
+    url: jdbc:h2:/opt/h2/data;AUTO_SERVER=TRUE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+logging:
+  level:
+    org.springframework.web: info
+    org.springframework.boot: info

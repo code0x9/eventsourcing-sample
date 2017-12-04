@@ -1,6 +1,7 @@
 package com.mark.study.eventsourcing.api
 
 import com.mark.study.eventsourcing.model.Customer
+import com.mark.study.eventsourcing.adapter.Adapter
 import com.mark.study.eventsourcing.model.CustomerRepository
 import org.slf4j.LoggerFactory
 import org.springframework.web.bind.annotation.GetMapping
@@ -35,5 +36,10 @@ class EventSourcingSampleController {
         }
 
         return "Hello Axon Framework."
+    }
+
+    @GetMapping("/conv")
+    fun conv(): String {
+        return Adapter.convert("abc")
     }
 }
